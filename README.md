@@ -197,7 +197,17 @@ Further documentation the topics according to this module:
 * [amqplib](https://www.npmjs.com/package/amqplib)
 
 #Keywords
-winston, rabbitmq, amqp, amqplib, logging, winston transport
+
+* winston
+* rabbitmq
+* amqp
+* amqplib
+* logging
+* winston transport
+* transport
+* error
+* error handling
+* errorhandler
 
 # License
 

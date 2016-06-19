@@ -6,7 +6,23 @@
   "scripts": {
     "test": "mocha test/."
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TBear79/winston-fast-rabbitmq"
+  },
+  "keywords": [
+    "winston",
+    "rabbitmq",
+    "amqp",
+    "amqplib",
+    "logging",
+    "winston transport",
+    "transport",
+    "error",
+    "error handling",
+    "errorhandler"
+  ],
+  "author": "Thorbjørn Jelgren",
   "license": "ISC",
   "dependencies": {
     "amqplib": "^0.4.2",
