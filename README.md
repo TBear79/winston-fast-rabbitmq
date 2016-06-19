@@ -72,7 +72,7 @@ The default function looks like this:
 
 ### silent
 
-boolean
+Boolean
 
 Default: false.
 
@@ -87,7 +87,7 @@ Bonus info! If you whan to suppress console messages from winston, just do this:
 
 ### wrapMessage
 
-boolean
+Boolean
 
 Default: true.
 
@@ -100,7 +100,7 @@ The resulting object will look something like this:
 
 ### protocol
 
-string
+String
 
 Default: 'amqp'
 
@@ -109,7 +109,7 @@ The protocol used to communicate with RabbitMQ (or perhaps another message queue
 
 ### host
 
-string
+String
 
 Default: 'localhost'
 
@@ -118,7 +118,7 @@ The URI of the server that hosts the RabbitMQ.
 
 ### virtualHost
 
-string
+String
 
 Default: ''
 
@@ -127,7 +127,7 @@ Used if RabbitMQ is configured with a virtual host on the server.
 
 ### port
 
-number
+Number
 
 Default: 5672
 
@@ -135,7 +135,7 @@ The port that is open for connections to RabbitMQ.
 
 ### username
 
-string
+String
 
 Default: 'guest'
 
@@ -144,7 +144,7 @@ Use this if RabbitMQ if credentials is required.
 
 ### password
 
-string
+String
 
 Default: 'guest'
 
@@ -153,7 +153,7 @@ Use this if RabbitMQ if credentials is required.
 
 ### exchangeType
 
-string
+String
 
 Default: 'topic'
 
@@ -162,7 +162,7 @@ The topic for the exchange.
 
 ### exchangeName
 
-string
+String
 
 Default: 'winstonLog'
 
