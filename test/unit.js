@@ -14,12 +14,91 @@ const sinon = require('sinon');
 const amqplib = require('amqplib');
 const winston = require('winston');
 
-this.timeoout
+const winstonFastRabbitMq = require('../lib/winston-fast-rabbitmq.js');
 
-const winstonInstantRabbitMq = require('../lib/winston-fast-rabbitmq.js');
+describe('Levels', (done) => {
+	describe('Test if levels are respected', function() {
+		it('should return true when minimum level is "info" and level is "info"',  (done) => {
+			const wir = new winstonFastRabbitMq();
 
-describe('Levels', () => {
+			const rs = wir._levelHelper.isLevelFulfilled('info', 'info');
 
+			expect(rs).to.be.true;
+			done();
+		});
+
+		it('should return true when minimum level is "info" and level is "warn"',  (done) => {
+			const wir = new winstonFastRabbitMq();
+
+			const rs = wir._levelHelper.isLevelFulfilled('warn', 'info');
+
+			expect(rs).to.be.true;
+			done();
+		});
+		
+		it('should return true when minimum level is "info" and level is "error"',  (done) => {
+			const wir = new winstonFastRabbitMq();
+
+			const rs = wir._levelHelper.isLevelFulfilled('error', 'info');
+
+			expect(rs).to.be.true;
+			done();
+		});
+
+		it('should return false when minimum level is "warn" and level is "info"',  (done) => {
+			const wir = new winstonFastRabbitMq();
+
+			const rs = wir._levelHelper.isLevelFulfilled('info', 'warn');
+
+			expect(rs).to.be.false;
+			done();
+		});
+
+		it('should return true when minimum level is "warn" and level is "warn"',  (done) => {
+			const wir = new winstonFastRabbitMq();
+
+			const rs = wir._levelHelper.isLevelFulfilled('warn', 'warn');
+
+			expect(rs).to.be.true;
+			done();
+		});
+
+		it('should return true when minimum level is "error" and level is "warn"',  (done) => {
+			const wir = new winstonFastRabbitMq();
+
+			const rs = wir._levelHelper.isLevelFulfilled('warn', 'warn');
+
+			expect(rs).to.be.true;
+			done();
+		});
+
+		it('should return false when minimum level is "info" and level is "error"',  (done) => {
+			const wir = new winstonFastRabbitMq();
+
+			const rs = wir._levelHelper.isLevelFulfilled('info', 'error');
+
+			expect(rs).to.be.false;
+			done();
+		});
+
+		it('should return false when minimum level is "warn" and level is "error"',  (done) => {
+			const wir = new winstonFastRabbitMq();
+
+			const rs = wir._levelHelper.isLevelFulfilled('warn', 'error');
+
+			expect(rs).to.be.false;
+			done();
+		});
+
+		it('should return true when minimum level is "error" and level is "error"',  (done) => {
+			const wir = new winstonFastRabbitMq();
+
+			const rs = wir._levelHelper.isLevelFulfilled('error', 'error');
+
+			expect(rs).to.be.true;
+			done();
+		});
+	});
 });
 
 describe('RabbitMq connection', () => {
@@ -39,7 +118,7 @@ describe('RabbitMq connection', () => {
 				durable: false
 			}
 
-		winston.add(winstonInstantRabbitMq, transportOptions);
+		winston.add(winstonFastRabbitMq, transportOptions);
 		winston.remove(winston.transports.Console);
 		before(function () { 
 		});
