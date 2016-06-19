@@ -72,7 +72,7 @@ The default function looks like this:
 
 ### silent
 
-bool
+boolean
 
 Default: false.
 
@@ -87,7 +87,7 @@ Bonus info! If you whan to suppress console messages from winston, just do this:
 
 ### wrapMessage
 
-bool
+boolean
 
 Default: true.
 
@@ -98,10 +98,106 @@ The resulting object will look something like this:
 	{"applicationId":"MyApp","datetime":"2016-06-19T13:06:14.451Z","level":"info","message":"We're testing the module!"}
 ```
 
-### more documentation to come ...
+### protocol
+
+string
+
+Default: 'amqp'
+
+The protocol used to communicate with RabbitMQ (or perhaps another message queue?)
+
+
+### host
+
+string
+
+Default: 'localhost'
+
+The URI of the server that hosts the RabbitMQ.
+
+
+### virtualHost
+
+string
+
+Default: ''
+
+Used if RabbitMQ is configured with a virtual host on the server.
+
+
+### port
+
+number
+
+Default: 5672
+
+The port that is open for connections to RabbitMQ.
+
+### username
+
+string
+
+Default: 'guest'
+
+Use this if RabbitMQ if credentials is required.
+
+
+### password
+
+string
+
+Default: 'guest'
+
+Use this if RabbitMQ if credentials is required.
+
+
+### exchangeType
+
+string
+
+Default: 'topic'
+
+The topic for the exchange.
+
+
+### exchangeName
+
+string
+
+Default: 'winstonLog'
+
+The name for the exchange.
+
 
 # Tests
 
+To run tests on this module, make sure that the modules for the tests are installed
+
+```
+	npm install winston-fast-rabbitmq --dev
+```
+
+Then run:
+
+```
+	npm test
+```
+
+NOTICE: The test is not only a unit test but also a functionality test. So rabbitMQ is required to be installed locally in order to run the test.
+
+In one of the tests, 1000 messages are send to the queue. It runs in about 12 seconds so don't be nervous if it seems to stall for a while.
+
+
+#Futher reading
+
+Further documentation the topics according to this module:
+
+* [Winston](https://www.npmjs.com/package/winston)
+* [RabbitMQ](https://www.rabbitmq.com/documentation.html) [Tutorial](https://www.rabbitmq.com/getstarted.html)
+* [amqplib](https://www.npmjs.com/package/amqplib)
+
+#Keywords
+winston, rabbitmq, amqp, amqplib, logging, winston transport
 
 # License
 
