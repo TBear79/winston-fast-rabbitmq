@@ -10,10 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "amqplib": "^0.4.2",
-    "amqplib-easy": "^4.2.0",
-    "util": "^0.10.3",
-    "winston": "^2.2.0",
-    "winston-amqp": "0.0.3",
-    "winston-rabbitmq": "0.0.8"
+    "util": "^0.10.3"
   }
 }
