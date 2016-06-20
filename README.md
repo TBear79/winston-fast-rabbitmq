@@ -1,11 +1,13 @@
 # winston-fast-rabbitmq
 
-A RabbitMQ transport for Winston. It closes the connection after every message, but keeps the connection open as long as new messages arrive within a short timespan.
+A RabbitMQ transport for Winston. 
+
+It closes the connection after every message, but keeps the connection open as long as new messages arrive within a short timespan.
 
 * Very few dependencies
 * Easy to use and fast to implement
-* Stable even when submitting several messages in a short timespan.
-* Build on [amqplib](https://www.npmjs.com/package/amqplib)
+* Stable
+* Build using [amqplib](https://www.npmjs.com/package/amqplib)
 
 # Usage
 
@@ -33,23 +35,26 @@ If you haven't, I'll just provide a link to their homepage as a service: [Rabbit
 
 ## Options
 
-You can of course provide options for setting up the transport and AMQP.
+You can of course provide options for setting up the transport and for amqplib.
 
 
 ### level
 
 String
 
-Default: 'info'.
+Default: 'info'
 
 Sets the minimum required level for sending the log to RabbitMQ. You can find the levels [here](https://www.npmjs.com/package/winston#logging-levels).
 
-
 ### applicationId
+
+DEPRECATED!! Use appId instead.
+
+### appId
 
 String
 
-Default: ''.
+Default: ''
 
 A name for the application sends the message. Used in the receiving application to identify where the message came from.
 
@@ -58,7 +63,7 @@ A name for the application sends the message. Used in the receiving application 
 
 Function
 
-Default: See below.
+Default: See below
 
 A function for handling errors if it fails when sending the log to the queue.
 
@@ -74,7 +79,7 @@ The default function looks like this:
 
 Boolean
 
-Default: false.
+Default: false
 
 If true, console-messages from winston-fast-rabbitmq will be suppressed. 
 
@@ -89,13 +94,13 @@ Bonus info! If you whan to suppress console messages from winston, just do this:
 
 Boolean
 
-Default: true.
+Default: true
 
 If true, messages will be wrapped in JSON where date and time is added using the toISOString() of the Date object.
 The resulting object will look something like this: 
 
 ```javascript
-	{"applicationId":"MyApp","datetime":"2016-06-19T13:06:14.451Z","level":"info","message":"We're testing the module!"}
+	{"appId":"MyApp","datetime":"2016-06-19T13:06:14.451Z","level":"info","message":"We're testing the module!"}
 ```
 
 ### protocol
@@ -104,7 +109,7 @@ String
 
 Default: 'amqp'
 
-The protocol used to communicate with RabbitMQ (or perhaps another message queue?)
+The protocol used to communicate with RabbitMQ (or perhaps another message queue?).
 
 
 ### host
@@ -122,7 +127,7 @@ String
 
 Default: ''
 
-Used if RabbitMQ is configured with a virtual host on the server.
+Used if RabbitMQ is configured with a virtual host.
 
 
 ### port
@@ -139,7 +144,7 @@ String
 
 Default: 'guest'
 
-Use this if RabbitMQ if credentials is required.
+Use this if credentials is required.
 
 
 ### password
@@ -148,7 +153,7 @@ String
 
 Default: 'guest'
 
-Use this if RabbitMQ if credentials is required.
+Use this if credentials is required.
 
 
 ### exchangeType
@@ -166,7 +171,7 @@ String
 
 Default: 'winstonLog'
 
-The name for the exchange.
+The name of the exchange.
 
 
 # Tests
@@ -183,7 +188,7 @@ Then run:
 	npm test
 ```
 
-NOTICE: The test is not only a unit test but also a functionality test. So rabbitMQ is required to be installed locally in order to run the test.
+NOTICE: The test is not only a unit test but also a functionality test. So RabbitMQ is required to be installed locally in order to run the test.
 
 In one of the tests, 1000 messages are send to the queue. It runs in about 12 seconds so don't be nervous if it seems to stall for a while.
 
