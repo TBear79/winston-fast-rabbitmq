@@ -4,10 +4,9 @@ A RabbitMQ transport for Winston.
 
 It closes the connection after every message, but keeps the connection open as long as new messages arrive within a short timespan.
 
-* Very few dependencies
 * Easy to use and fast to implement
-* Stable
 * Build using [amqplib](https://www.npmjs.com/package/amqplib)
+* Non-blocking as it uses [rabbit-chatter](https://www.npmjs.com/package/rabbit-chatter)
 
 # Usage
 
@@ -29,14 +28,11 @@ Setup the transport in winston:
 	winston.add(winstonFastRabbitMq, options);
 ```
 
-That's it! Of course you need to have RabbitMQ up and running for this to work.
-
-If you haven't, I'll just provide a link to their homepage as a service: [RabbitMQ](https://www.rabbitmq.com/).
+Now you are ready to send some logs to RabbitMq!
 
 ## Options
 
-You can of course provide options for setting up the transport and for amqplib.
-
+Most options are passed on directly to [rabbit-chatter](https://www.npmjs.com/package/rabbit-chatter). So have a look at that module to see the rest of the option list.
 
 ### level
 
@@ -48,130 +44,7 @@ Sets the minimum required level for sending the log to RabbitMQ. You can find th
 
 ### applicationId
 
-DEPRECATED!! Use appId instead.
-
-### appId
-
-String
-
-Default: ''
-
-A name for the application sends the message. Used in the receiving application to identify where the message came from.
-
-
-### handleError
-
-Function
-
-Default: See below
-
-A function for handling errors if it fails when sending the log to the queue.
-
-The default function looks like this:
-```javascript
-	(ex) => {
-		console.log('ERROR in winston-fast-rabbitmq: ' + util.inspect(ex, { depth: null }));
-	}
-```
-
-
-### silent
-
-Boolean
-
-Default: false
-
-If true, console-messages from winston-fast-rabbitmq will be suppressed. 
-
-Bonus info! If you whan to suppress console messages from winston, just do this:
-
-```javascript
-	winston.remove(winston.transports.Console);
-```
-
-
-### wrapMessage
-
-Boolean
-
-Default: true
-
-If true, messages will be wrapped in JSON where date and time is added using the toISOString() of the Date object.
-The resulting object will look something like this: 
-
-```javascript
-	{"appId":"MyApp","datetime":"2016-06-19T13:06:14.451Z","level":"info","message":"We're testing the module!"}
-```
-
-### protocol
-
-String
-
-Default: 'amqp'
-
-The protocol used to communicate with RabbitMQ (or perhaps another message queue?).
-
-
-### host
-
-String
-
-Default: 'localhost'
-
-The URI of the server that hosts the RabbitMQ.
-
-
-### virtualHost
-
-String
-
-Default: ''
-
-Used if RabbitMQ is configured with a virtual host.
-
-
-### port
-
-Number
-
-Default: 5672
-
-The port that is open for connections to RabbitMQ.
-
-### username
-
-String
-
-Default: 'guest'
-
-Use this if credentials is required.
-
-
-### password
-
-String
-
-Default: 'guest'
-
-Use this if credentials is required.
-
-
-### exchangeType
-
-String
-
-Default: 'topic'
-
-The topic for the exchange.
-
-
-### exchangeName
-
-String
-
-Default: 'winstonLog'
-
-The name of the exchange.
+DEPRECATED!! Use appId in rabbit-chatter instead.
 
 
 # Tests
@@ -190,9 +63,6 @@ Then run:
 
 NOTICE: The test is not only a unit test but also a functionality test. So RabbitMQ is required to be installed locally in order to run the test.
 
-In one of the tests, 1000 messages are send to the queue. It runs in about 12 seconds so don't be nervous if it seems to stall for a while.
-
-
 #Futher reading
 
 Further documentation the topics according to this module:
@@ -200,6 +70,7 @@ Further documentation the topics according to this module:
 * [Winston](https://www.npmjs.com/package/winston)
 * [RabbitMQ](https://www.rabbitmq.com/documentation.html) [Tutorial](https://www.rabbitmq.com/getstarted.html)
 * [amqplib](https://www.npmjs.com/package/amqplib)
+* [rabbit-chatter](https://www.npmjs.com/package/rabbit-chatter)
 
 #Keywords
 
@@ -212,13 +83,13 @@ Further documentation the topics according to this module:
 * transport
 * error
 * error handling
-* errorhandler
+* error handler
 
 # License
 
 The MIT License (MIT)
 
-Copyright (c) 2016 Thorbjørn Gliese Jelgren (The Right Foot)
+Copyright (c) 2016 Thorbjørn Gliese Jelgren (The Right Foot, www.therightfoot.dk)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
