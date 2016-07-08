@@ -42,9 +42,22 @@ Default: 'info'
 
 Sets the minimum required level for sending the log to RabbitMQ. You can find the levels [here](https://www.npmjs.com/package/winston#logging-levels).
 
-### applicationId
+### formatter
 
-DEPRECATED!! Use appId in rabbit-chatter instead.
+function
+
+Default: See below
+
+Sets the standard formatter for the message. If no function is passed in this option, it will use the default-formatter which looks like this:
+
+```javascript
+function(level, meta, message)
+{
+    return JSON.stringify({ level: level, meta: meta, message: message  });
+};
+```
+
+Thanks to Thomas from ebuildy for this contribution :-)
 
 
 # Tests
