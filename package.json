@@ -23,7 +23,7 @@
     "errorhandler"
   ],
   "author": "Thorbjørn Jelgren",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "amqplib": "^0.4.2",
     "rabbit-chatter": "^1.0.1",
