@@ -85,6 +85,10 @@ Further documentation the topics according to this module:
 * [amqplib](https://www.npmjs.com/package/amqplib)
 * [rabbit-chatter](https://www.npmjs.com/package/rabbit-chatter)
 
+#Release notes
+
+* 1.2.1 - Removed forward slash provided to rabbit-chatter
+
 #Keywords
 
 * winston
