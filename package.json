@@ -26,7 +26,7 @@
   "license": "MIT",
   "dependencies": {
     "amqplib": "^0.4.2",
-    "rabbit-chatter": "^1.0.1",
+    "rabbit-chatter": "^1.1.3",
     "util": "^0.10.3",
     "winston": "^2.2.0"
   },

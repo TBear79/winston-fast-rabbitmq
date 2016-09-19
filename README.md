@@ -87,6 +87,7 @@ Further documentation the topics according to this module:
 
 #Release notes
 
+* 1.2.2 - Updated dependencies
 * 1.2.1 - Removed forward slash provided to rabbit-chatter
 
 #Keywords
