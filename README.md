@@ -87,6 +87,7 @@ Further documentation the topics according to this module:
 
 #Release notes
 
+* 1.2.4 - Added name to be able to identify transport in winston. Provided routingKey to rabbit-chatter. Both updates with thanks to JimiC.
 * 1.2.2 - Updated dependencies
 * 1.2.1 - Removed forward slash provided to rabbit-chatter
 
