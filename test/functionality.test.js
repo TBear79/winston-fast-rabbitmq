@@ -20,7 +20,6 @@ describe('Winston connection', () => {
 				host: 'localhost',
 				port: 5672,
 				silent: true,
-				host: 'localhost',
 				exchangeName: 'TEST',
 				exchangeType: 'topic',
 				durable: false
