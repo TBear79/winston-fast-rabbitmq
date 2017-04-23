@@ -50,6 +50,7 @@ Default: See below
 
 Sets the standard formatter for the message. If no function is passed in this option, it will use the default-formatter which looks like this:
 
+For versions: `<=1.2.4`
 ```javascript
 function(level, meta, message)
 {
@@ -57,6 +58,13 @@ function(level, meta, message)
 };
 ```
 
+For versions: `>1.2.4`
+```javascript
+function(options)
+{
+    return JSON.stringify({ level: options.level, meta: options.meta, message: options.message  });
+};
+```
 Thanks to Thomas from ebuildy for this contribution :-)
 
 
