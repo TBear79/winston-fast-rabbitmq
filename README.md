@@ -87,6 +87,7 @@ Further documentation the topics according to this module:
 
 # Release notes
 
+* 2.0.0 - BREAKING! Renamed exported class to WinstonFastRabbitMq. Added types definitions.
 * 1.3.0 - Refactor to comply with winston formatter function signature. Thanks to JimiC.
 * 1.2.4 - Added name to be able to identify transport in winston. Provided routingKey to rabbit-chatter. Both updates with thanks to JimiC.
 * 1.2.2 - Updated dependencies
