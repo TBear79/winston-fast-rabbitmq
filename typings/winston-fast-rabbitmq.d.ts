@@ -9,7 +9,7 @@ declare class WinstonFastRabbitMq extends winston.Transport {
 declare module 'winston' {
 
     export interface Transports {
-        WinstonInstantRabbitMq: WinstonFastRabbitMq;
+        WinstonFastRabbitMq: WinstonFastRabbitMq;
     }
 
     export interface WinstonFastRabbitMqTransportOptions extends winston.GenericTransportOptions {
