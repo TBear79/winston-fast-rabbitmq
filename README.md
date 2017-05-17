@@ -95,6 +95,7 @@ Further documentation the topics according to this module:
 
 # Release notes
 
+* 2.1.0 - Ability to pass timeout to rabbit-chatter
 * 2.0.2 - IMPORTANT! Renamed transport property from `WinstonInstanceRabbitMq` to `WinstonFastRabbitMq` in types.
 * 2.0.0 - BREAKING! Renamed exported class to `WinstonFastRabbitMq`. Added types definitions.
 * 1.3.0 - Refactor to comply with `winston` formatter function signature. Thanks to JimiC.
