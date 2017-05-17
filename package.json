@@ -1,6 +1,6 @@
 {
   "name": "winston-fast-rabbitmq",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "",
   "main": "lib/winston-fast-rabbitmq.js",
   "types": "typings/winston-fast-rabbitmq.d.ts",
