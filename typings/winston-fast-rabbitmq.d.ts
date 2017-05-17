@@ -22,6 +22,7 @@ declare module 'winston' {
         port?: number;
         protocol?: string;
         routingKey?: string;
+        timeout?: number;
         username?: string;
         virtualHost?: string;
         handleError?(err: any): void;
