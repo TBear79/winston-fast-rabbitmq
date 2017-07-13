@@ -1,7 +1,7 @@
 {
   "name": "winston-fast-rabbitmq",
   "version": "2.1.0",
-  "description": "",
+  "description": "A RabbitMQ transport for Winston.",
   "main": "lib/winston-fast-rabbitmq.js",
   "types": "typings/winston-fast-rabbitmq.d.ts",
   "scripts": {
@@ -27,16 +27,16 @@
   "license": "MIT",
   "dependencies": {
     "amqplib": "^0.5.1",
-    "rabbit-chatter": "^1.2.0",
+    "rabbit-chatter": "^2.0.0",
     "util": "^0.10.3",
     "winston": "^2.3.1"
   },
   "devDependencies": {
-    "@types/winston": "^2.3.1",
-    "chai": "^3.5.0",
-    "mocha": "^3.2.0",
-    "sinon": "^2.1.0",
-    "tslint": "^5.1.0",
-    "typescript": "^2.2.2"
+    "@types/winston": "^2.3.3",
+    "chai": "^4.1.0",
+    "mocha": "^3.4.2",
+    "sinon": "^2.3.8",
+    "tslint": "^5.5.0",
+    "typescript": "^2.4.1"
   }
 }
