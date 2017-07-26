@@ -95,6 +95,7 @@ Further documentation the topics according to this module:
 
 # Release notes
 
+* 2.2.0 - Updated dependencies, including rabbit-chatter v2 that fixes an issue that left open connections.
 * 2.1.0 - Ability to pass timeout to rabbit-chatter
 * 2.0.2 - IMPORTANT! Renamed transport property from `WinstonInstanceRabbitMq` to `WinstonFastRabbitMq` in types.
 * 2.0.0 - BREAKING! Renamed exported class to `WinstonFastRabbitMq`. Added types definitions.
