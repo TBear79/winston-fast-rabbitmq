@@ -1,6 +1,6 @@
 {
   "name": "winston-fast-rabbitmq",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "A RabbitMQ transport for Winston.",
   "main": "lib/winston-fast-rabbitmq.js",
   "types": "typings/winston-fast-rabbitmq.d.ts",
